@@ -49,10 +49,9 @@
         var sale = 0;
         for (var key in mydata) {
             suma = suma + parseInt(mydata[key]);
+            sumB = sumB + parseInt(mydata[key]);
             if (mydata[key] != '0') sum = sum + (mydata[key] * 100);
-            sumB = suma + parseInt(mydata[key]);
         }
-
         var round = 0;
         while (parseInt(suma) != 0) {
             if (mydata.Harry1 > 0) { mydata.Harry1 = parseInt(mydata.Harry1) - 1; round = round + 1; }
