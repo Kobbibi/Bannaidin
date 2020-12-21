@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cutomer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                <a style="text-decoration: none;color: #000000;" href="index.html"><h1 style="color: rgb(0, 0, 0);">บ้าน<font style="color: rgb(243, 172, 65);">นาย</font>ดิน</h1></a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav justify-content-end" style="margin-top: 25px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">contect</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script langusge="javascript">
+        var a = window.location.search.substr(1);
+        var mydata = { Harry1: 0, Harry2: 0, Harry3: 0, Harry4: 0, Harry5: 0, Harry6: 0, Harry7: 0 };
+        var Data = {}
+        var n = a.split('&');
+        for (var i = 0; i < n.length; i++) {
+            var b = n[i].split("=");
+            var Har = "Harry" + (i + 1);
+            mydata[Har] = b[1];
+            Data[Har] = b[1];
+        }
+        var sum = 0;
+        var suma = 0; sumB = 0;
+        var sale = 0;
+        for (var key in mydata) {
+            suma = suma + parseInt(mydata[key]);
+            if (mydata[key] != '0') sum = sum + (mydata[key] * 100);
+            sumB = suma + parseInt(mydata[key]);
+        }
+
+        var round = 0;
+        while (parseInt(suma) != 0) {
+            if (mydata.Harry1 > 0) { mydata.Harry1 = parseInt(mydata.Harry1) - 1; round = round + 1; }
+            if (mydata.Harry2 > 0) { mydata.Harry2 = parseInt(mydata.Harry2) - 1; round = round + 1; }
+            if (mydata.Harry3 > 0) { mydata.Harry3 = parseInt(mydata.Harry3) - 1; round = round + 1; }
+            if (mydata.Harry4 > 0) { mydata.Harry4 = parseInt(mydata.Harry4) - 1; round = round + 1; }
+            if (mydata.Harry5 > 0) { mydata.Harry5 = parseInt(mydata.Harry5) - 1; round = round + 1; }
+            if (mydata.Harry6 > 0) { mydata.Harry6 = parseInt(mydata.Harry6) - 1; round = round + 1; }
+            if (mydata.Harry7 > 0) { mydata.Harry7 = parseInt(mydata.Harry7) - 1; round = round + 1; }
+            if (round == 1 || round == 0) { round = 0; suma = 0; }
+            else if (round == 2) { sale = parseInt(sale) + 20; }
+            else if (round == 3) { sale = parseInt(sale) + 60; }
+            else if (round == 4) { sale = parseInt(sale) + 120; }
+            else if (round == 5) { sale = parseInt(sale) + 200; }
+            else if (round == 6) { sale = parseInt(sale) + 300; }
+            else if (round == 7) { sale = parseInt(sale) + 420; }
+            suma = parseInt(suma) - round;
+            round = 0;
+        }
+    </script>
+    <div class="container" style="background-color: rgb(243, 172, 65);">
+        <div class="row pt-4">
+            <div class="col-md-6">
+                <h3>จำนวนหนังสือ Promotion
+                    <hr>
+                </h3>
+                <table class="table table-hover " style="border: 3rem;border-color: cornsilk;">
+                    <thead>
+                        <tr>
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">ชื่อหนังสือ</th>
+                            <th scope="col">จำนวน</th>
+                            <th scope="col">ราคา</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <script>
+                            var NumberN = 1;
+                            for (var key in Data) {
+                                if (Data[key] != 0) {
+                                    if (key == "Harry1") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับศิลาอาถรรพ์</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                    if (key == "Harry2") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับห้องแห่งความลับ</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                    if (key == "Harry3") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับนักโทษแห่งอัซคาบัน</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                    if (key == "Harry4") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับถ้วยอัคนี</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                    if (key == "Harry5") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับภาคีนกฟีนิกซ์</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                    if (key == "Harry6") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับเจ้าชายเลือดผสม</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                    if (key == "Harry7") {
+                                        document.write("<tr><th scope=\"row\">" + NumberN + "</th>" +
+                                            "<td>แฮร์รี่พอตเตอร์กับครื่องรางยมทูต</td><td>" + Data[key] + "</td><td>" + parseInt(Data[key]) * 100 + "</td> </tr>"
+                                        ); NumberN = NumberN + 1;
+                                    }
+                                }
+                            }
+                        </script>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3>สรุป
+                    <hr>
+                </h3>
+                <table class="table table-hover " style="border: 3rem;border-color: cornsilk;">
+                    <thead>
+                        <tr>
+                            <th scope="col">รายละเอียด</th>
+                            <th scope="col">จำนวน</th>
+                            <th scope="col">หน่วย</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>รวมหนังสือทั้งหมด</td>
+                            <script>document.write("<td>" + sumB + "</td>")</script>
+                            <td>เล่ม</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>ราคารวม</td>
+                            <script>document.write("<td>" + sum + "</td>")</script>
+                            <td>บาท</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>ส่วนลด</td>
+                            <script>document.write("<td>" + sale + "</td>")</script>
+                            <td>เล่ม</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>รวมสุทธิ</td>
+                            <script>document.write("<td>" + (sum - sale) + "</td>")</script>
+                            <td>เล่ม</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <button type="button" name="submit" class="btn btn-success">ยืนยัน</button>
+                    <button type="button" name="submit" class="btn btn-danger">ยกเลิก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center class="pt-4"><a href="index.html"><button type="button" name="submit" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Home</button></a></center>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
+</html>
